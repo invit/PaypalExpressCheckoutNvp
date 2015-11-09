@@ -5,6 +5,7 @@ use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory as CoreGatewayFactory;
 use Payum\Core\GatewayFactoryInterface;
 use Payum\Paypal\ExpressCheckout\Nvp\Action\Api\CreateRecurringPaymentProfileAction;
+use Payum\Paypal\ExpressCheckout\Nvp\Action\Api\DoCaptureAction;
 use Payum\Paypal\ExpressCheckout\Nvp\Action\Api\DoExpressCheckoutPaymentAction;
 use Payum\Paypal\ExpressCheckout\Nvp\Action\Api\GetExpressCheckoutDetailsAction;
 use Payum\Paypal\ExpressCheckout\Nvp\Action\Api\GetRecurringPaymentsProfileDetailsAction;
@@ -86,6 +87,7 @@ class PaypalExpressCheckoutGatewayFactory implements GatewayFactoryInterface
             'payum.action.api.manage_recurring_payments_profile_status' => new ManageRecurringPaymentsProfileStatusAction(),
             'payum.action.api.create_billing_agreement' => new CreateBillingAgreementAction(),
             'payum.action.api.do_reference_transaction' => new DoReferenceTransactionAction(),
+            'payum.action.api.do_capture' => new DoCaptureAction(),
             'payum.action.api.authorize_token' => new AuthorizeTokenAction(),
         ));
 

@@ -535,6 +535,27 @@ class Api
     }
 
     /**
+     * @param array $fields
+     * Require: AUTHORIZATIONID, AMT, COMPLETETYPE
+     *
+     * @param array $fields
+     *
+     * @return array
+     */
+    public function doCapture(array $fields)
+    {
+        $request = new FormRequest();
+        $request->setFields($fields);
+
+        $request->setField('METHOD', 'DoCapture');
+
+        $this->addVersionField($request);
+        $this->addAuthorizeFields($request);
+
+        return $this->doRequest($request);
+    }
+
+    /**
      * @param FormRequest $request
      *
      * @throws HttpException
